@@ -43,4 +43,29 @@ public class Project : BaseEntity
 
         return project;
     }
+
+    public static Project GeneralUpdate(
+        Project project,
+        string name,
+        string customerCompany,
+        string contactorCompany
+    )
+    {
+        if (name is not null && name != project.Name)
+        {
+            project.Name = name;
+        }
+
+        if (customerCompany is not null && customerCompany != project.CustomerCompany)
+        {
+            project.CustomerCompany = customerCompany;
+        }
+
+        if (contactorCompany is not null && contactorCompany != project.ContactorCompany)
+        {
+            project.ContactorCompany = contactorCompany;
+        }
+
+        return project;
+    }
 }
